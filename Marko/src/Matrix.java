@@ -15,27 +15,27 @@ public class Matrix {
 			int matrica [][] = new int [i][j];
 			while(brojac<(i*j)) {
 	for(int a=maxs;a>=mins;a--) { // Ide lijevo
-		matrica[minr][a]=brojac++;
+		matrica[maxr][a]=brojac++;
 	}
 	if(brojac>(i*j)) {
 		break;
 	}
-	for(int a=maxs;a>=mins;a--) {
+	for(int a=maxs-1;a>=mins;a--) {
 		matrica[a][mins]=brojac++;	// Ide gore
 	
 	}
 	if(brojac>(i*j)) {
 		break;
 	}
-	for(int a=mins;a<=maxs;a++) {
-		matrica[maxr][a]=brojac++;	// Ide desno
+	for(int a=mins+1;a<=maxs;a++) {
+		matrica[minr][a]=brojac++;	// Ide desno
 			
 	}
 	if(brojac>(i*j)) {
 		break;
 	}
-	for(int a=mins;a<=maxs-1;a++) {
-		matrica[minr][a]=brojac++;	//ide dolje
+	for(int a=mins+1;a<=maxs-1;a++) {
+		matrica[mins][a]=brojac++;	//ide dolje
 		
 	}
 	if(brojac>(i*j)) {
