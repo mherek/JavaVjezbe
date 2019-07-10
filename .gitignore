@@ -1,10 +1,10 @@
 //Gitignore template 
 
-*/.classpath
-*/.project
-*/bin
-*/.settings
-*/.log
+Marko/.classpath
+Marko/.project
+Marko/bin
+Marko/.settings
+Marko/.log
 
 
 
