@@ -1,4 +1,27 @@
 //Gitignore template 
+
+Marko\.classpath
+Marko\.project
+Marko\bin
+
+Edunova05\.project
+Edunova05\.project
+Edunova05\.settings
+Edunova05\bin
+
+Edunova04\.project
+Edunova04\.project
+Edunova04\.settings
+Edunova04\bin
+
+
+Edunova03\.project
+Edunova03\.project
+Edunova03\.settings
+Edunova03\bin
+/**/
+
+
 # Compiled class file
 .classpath
 .project
