@@ -1,6 +1,11 @@
 //Gitignore template 
 # Compiled class file
-.class
+.classpath
+.project
+
+# Folderi
+bin
+.settings
 
 # Log file
 .log
