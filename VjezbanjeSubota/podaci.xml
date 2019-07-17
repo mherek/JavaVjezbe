@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<polaznik>
+		<sijecanj>
+			22
+		</sijecanj>
+	</polaznik>
+	<ostalo>
+		<seminari>
+			<prvi>
+				<java>
+					33
+				</java>
+				<pero>
+					<perica>
+						10
+					</perica>
+				</pero>
+			</prvi>
+		</seminari>
+	</ostalo>
+	<edunova>
+		<zz>
+			<tt>
+				<pp>
+					<hh>
+						<nn>
+							5
+						</nn>
+					</hh>
+				</pp>
+			</tt>
+		</zz>
+	</edunova>
+	<element>
+		<div>
+			<a >
+				<div></div>
+				<p >10</p>
+			</a>
+		</div>
+	</element>
+</root>

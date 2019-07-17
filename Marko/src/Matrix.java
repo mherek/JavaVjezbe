@@ -49,7 +49,7 @@ public class Matrix {
 			
 			for(int a=0;a<i;a++) {
 				for(int b=0;b<j;b++) {
-					System.out.print(matrica[a][b]+ "    	");
+					System.out.print(matrica[a][b]+ "    	\t");
 					
 				}
 			System.out.println();

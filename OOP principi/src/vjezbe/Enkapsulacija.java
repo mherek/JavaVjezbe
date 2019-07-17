@@ -1,21 +1,14 @@
 package vjezbe;
 
-public  class Enkapsulacija {
+public abstract  class Enkapsulacija {
 	
-	public Enkapsulacija() {
-		
-	}
-public Enkapsulacija(String ime, String prezime) {
-	this.ime=ime;
-	this.prezime=prezime;
-}
+
 
 	private String ime;
 	private String prezime;
-	private String nadimak;
+
 	
-	
-		
+	public abstract String getTip();	
 	
 
 	public String getIme() {
@@ -33,13 +26,6 @@ public Enkapsulacija(String ime, String prezime) {
 	public void setPrezime(String prezime) {
 		this.prezime = prezime;
 	}
-	public String getNadimak() {
-		return nadimak;
-	}
-	public void setNadimak(String nadimak) {
-		this.nadimak = nadimak;
-	}
-	
 
 	
 	

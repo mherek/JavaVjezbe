@@ -15,26 +15,26 @@ public class Matrica2 {
 	int mins=0;
 	
     while(b<=(r*s)){
-		for (int i = maxs; i >= mins; i--){
+		for (int i = maxr; i >= minr; i--){
 			matrica[maxr][i] = b++;
 			}
 		if(b>(r*s)) {
 			break;
 		}
-		for (int i = maxr-1; i >= minr; i--) {
-			matrica[i][mins] = b++;
-			}
-		if(b>(r*s)) {
-			break;
-		}
-		for (int i = mins+1; i <= maxs; i++){
-			matrica[minr][i] = b++;
-			}
-		if(b>(r*s)) {
-			break;
-		}
-		for (int i = minr+1; i <= maxr-1; i++){
+		for (int i = maxs-1; i >= mins; i--) {
 			matrica[i][maxs] = b++;
+			}
+		if(b>(r*s)) {
+			break;
+		}
+		for (int i = minr+1; i <= maxr; i++){
+			matrica[i][minr] = b++;
+			}
+		if(b>(r*s)) {
+			break;
+		}
+		for (int i = mins+1; i <= maxs-1; i++){
+			matrica[mins][i] = b++;
 			}
 		if(b>(r*s)) {
 			break;
