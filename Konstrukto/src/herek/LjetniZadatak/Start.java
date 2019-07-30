@@ -1,41 +1,19 @@
 package herek.LjetniZadatak;
 
-import java.math.BigDecimal;
-import java.net.URL;
 import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.JOptionPane;
 
-
 public class Start {
 	private Connection connection;
-	PreparedStatement preparedStatement;
-
-
-	
-
-	private List<Osoba> osobe = new ArrayList<Osoba>();
+	private List<Radnik> radnici;
 
 	public Start() {
+		radnici = new ArrayList<Radnik>();
 		connection = Baza.getConnection();
 
-		try {
-			Class.forName("org.mariadb.jdbc.Driver");
-			
-			connection = DriverManager.getConnection
-					("jdbc:mariadb://localhost/konstrukto?useUnicode=true&characterEncoding=UTF-8",
-					"edunova","edunova");
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		
-		
 		petlja: while (true) {
 			izbornik();
 			switch (Kontrola.unosInt("Odaberite radnju")) {
@@ -43,16 +21,16 @@ public class Start {
 				unosOsobe();
 				break;
 			case 2:
-			//	izlistajOsobe();
+				izlistajOsobe();
 				break;
 			case 3:
-				//izmjenaOsobe();
+				izmjenaOsobe();
 				break;
 			case 4:
-				//brisanjeOsobe();
+				// brisanjeOsobe();
 				break;
 			case 5:
-			
+
 				break;
 			case 7:
 				break petlja;
@@ -60,30 +38,53 @@ public class Start {
 				break;
 			}
 		}
+
 	}
 
+	private void izmjenaOsobe() {
+		izlistajOsobe();
+		Radnik r = radnici.get(redniBrojOsobe() - 1);
+		r=postaviVrijednosti(r);
+	}
 
+	private void izlistajOsobe() {
+		System.out.println("\n Ispis osoba");
+		int i = 1;
+	for (Radnik radnik : radnici) {
+		System.out.println(i++ + "." + radnik);
+	}
+	System.out.println("");
 
-
-
-
-	private void unosOsobe() {
-		try {
-			PreparedStatement preparedStatement = connection.prepareStatement(" Insert into  radnik (ime, prezime) " + 
-		" values (?.?) ");
-			preparedStatement.setString(1, "Marko");
-			preparedStatement.setString(2, "Herek");
-			System.out.println(preparedStatement.executeUpdate());
-		} catch (Exception e) {
-			e.printStackTrace();
 		}
-		
+
+	
+
+	private int redniBrojOsobe() {
+		int rb;
+		while (true) {
+			rb = Kontrola.unosInt(" Unesite redni broj");
+			if (rb > radnici.size()) {
+				JOptionPane.showConfirmDialog(null, " Obavezan odabir ponudenih brojeva");
+				continue;
+			}
+			return rb;
+		}
 	}
 
+	private Radnik unosOsobe() {
+		Radnik r = new Radnik();
+		r = postaviVrijednosti(r);
+		return r;
+	}
 
-
-
-
+	private Radnik postaviVrijednosti(Radnik r) {
+		r.setIme(Kontrola.unosString(" Unesite ime "));
+		r.setPrezime(Kontrola.unosString(" Unesite prezime"));
+		r.setIban(JOptionPane.showInputDialog("Unesite iban")); // Napraviti kontrolu za provjeru iban-a
+		r.setOib(JOptionPane.showInputDialog(" Unesite OIB")); // Provjeru OIB-a
+		r.setNadredeni(Kontrola.unosInt(" Unesite sifru nadredenog"));
+		return null;
+	}
 
 	private void izbornik() {
 		System.out.println("Konstrukto!");

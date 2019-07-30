@@ -4,7 +4,13 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 
 public class Baza {
+	private Connection connection;
 	
+	public void setConnection(Connection connection) {
+		this.connection = connection;
+	}
+
+
 	public static Connection getConnection() {
 		
 		try {
